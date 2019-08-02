@@ -82,3 +82,4 @@ F:\code\C#\XXCWEBAPI\XXCWEBAPI\bin\zh-Hans\System.Web.Razor.resources.dll
 F:\code\C#\XXCWEBAPI\XXCWEBAPI\bin\zh-Hans\System.Web.WebPages.resources.dll
 F:\code\C#\XXCWEBAPI\XXCWEBAPI\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
 F:\code\C#\XXCWEBAPI\XXCWEBAPI\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
+F:\code\C#\XXCWEBAPI\XXCWEBAPI\obj\Debug\XXCWEBAPI.csprojResolveAssemblyReference.cache

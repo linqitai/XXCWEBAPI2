@@ -16,18 +16,11 @@ using XXCWEBAPI.Utils;
 
 namespace XXCWEBAPI.Controllers
 {
-    [RoutePrefix("api/SHFY")]
-    public class SHFYController : ApiController
+    [RoutePrefix("api/SHFY2")]
+    public class SHFYController2 : ApiController
     {
         [HttpGet, Route("testLink")]
         public string TestLink()
-        {
-            string result = SQLHelper.LinkSqlDatabase();
-            return ConvertHelper.resultJson(1, result);
-            //return mssqlserver;
-        }
-        [HttpGet, Route("testLink2")]
-        public string TestLink2()
         {
             string result = SQLHelper2.LinkSqlDatabase();
             return ConvertHelper.resultJson(1, result);
@@ -74,7 +67,7 @@ namespace XXCWEBAPI.Controllers
                         new SqlParameter("@OrderCode",SqlDbType.VarChar){Value = RandKey.ToString()},
                         new SqlParameter("@OrderCodeIsUse",SqlDbType.VarChar){Value = OrderCodeIsUse.ToString()}
                     };
-                object obj = SQLHelper.ExecuteScalar(sqlIsExistEC, System.Data.CommandType.Text, pms4EC);
+                object obj = SQLHelper2.ExecuteScalar(sqlIsExistEC, System.Data.CommandType.Text, pms4EC);
                 if (Convert.ToInt32(obj) == 0)
                 { //说明此EnterCode可以使用
                     is_ec_ok = true;
@@ -100,7 +93,7 @@ namespace XXCWEBAPI.Controllers
             };
             try
             {
-                int result = SQLHelper.ExecuteNonQuery(sql, System.Data.CommandType.Text, pms);
+                int result = SQLHelper2.ExecuteNonQuery(sql, System.Data.CommandType.Text, pms);
                 if (result == 1)
                 {
                     int code = 1;
@@ -134,7 +127,7 @@ namespace XXCWEBAPI.Controllers
                 new SqlParameter("@OrderCode",SqlDbType.NVarChar){Value = v.OrderCode},
                 new SqlParameter("@OrderCodeIsUse0",SqlDbType.VarChar){Value = ( OrderCodeIsUse0.ToString())}
             };
-            object obj = SQLHelper.ExecuteScalar(sqlIsExistEC, System.Data.CommandType.Text, pms4EC);
+            object obj = SQLHelper2.ExecuteScalar(sqlIsExistEC, System.Data.CommandType.Text, pms4EC);
             if (Convert.ToInt32(obj) == 1)
             {
                 int OrderCodeIsUse = 1;
@@ -145,7 +138,7 @@ namespace XXCWEBAPI.Controllers
                 sql = "update XXCLOUDALL.dbo.T_SHFYOrderInfo set OrderCodeIsUse=@OrderCodeIsUse where OrderCode=@OrderCode";
                 try
                 {
-                    int result = SQLHelper.ExecuteNonQuery(sql, System.Data.CommandType.Text, pms);
+                    int result = SQLHelper2.ExecuteNonQuery(sql, System.Data.CommandType.Text, pms);
                     if (result == 1) {
                         return ConvertHelper.resultJson(1, "此预约码有效,允许进入");
                     }
@@ -171,28 +164,6 @@ namespace XXCWEBAPI.Controllers
         }
         [HttpGet, Route("getList")]
         public string GetList()
-        {
-            string sql = "select * from XXCLOUDALL.dbo.T_SHFYOrderInfo";
-            //string sql = "select * from T_BlacklistInf";
-            DataTable dt;
-            try
-            {
-                dt = SQLHelper.ExecuteDataTable(sql, System.Data.CommandType.Text, null);
-                return "{\"code\":1,\"data\":" + ConvertHelper.DataTableToJson(dt) + "}";
-            }
-            catch (Exception e)
-            {
-                //在webapi中要想抛出异常必须这样抛出，否则只抛出一个默认500的异常
-                var resp = new HttpResponseMessage(HttpStatusCode.InternalServerError)
-                {
-                    Content = new StringContent(e.ToString()),
-                    ReasonPhrase = "error"
-                };
-                throw new HttpResponseException(resp);
-            }
-        }
-        [HttpGet, Route("getList2")]
-        public string GetList2()
         {
             string sql = "select * from XXCLOUDALL.dbo.T_SHFYOrderInfo";
             //string sql = "select * from T_BlacklistInf";
