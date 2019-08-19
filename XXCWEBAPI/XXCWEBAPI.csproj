@@ -155,6 +155,7 @@
     <Compile Include="Models\BlacklistInf.cs" />
     <Compile Include="Models\CourtInf.cs" />
     <Compile Include="Models\LawyerInf.cs" />
+    <Compile Include="Models\XXYXT.cs" />
     <Compile Include="Models\UserInf.cs" />
     <Compile Include="Models\VisitorAccessInf.cs" />
     <Compile Include="Models\SHFY.cs" />
@@ -169,6 +170,7 @@
     <Compile Include="Utils\HttpHelper.cs" />
     <Compile Include="Utils\MD5Helper.cs" />
     <Compile Include="Utils\RSAHelper.cs" />
+    <Compile Include="Utils\SQLHelper4XXYXT.cs" />
     <Compile Include="Utils\SQLHelper2.cs" />
     <Compile Include="Utils\SQLHelper.cs" />
   </ItemGroup>

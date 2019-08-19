@@ -94,7 +94,7 @@
       <publishTime>07/05/2019 16:14:23</publishTime>
     </File>
     <File Include="bin/XXCWEBAPI.dll">
-      <publishTime>08/02/2019 15:27:10</publishTime>
+      <publishTime>08/19/2019 16:57:16</publishTime>
     </File>
     <File Include="bin/zh-Hans/System.Net.Http.Formatting.resources.dll">
       <publishTime>07/05/2019 16:14:23</publishTime>
@@ -199,7 +199,7 @@
       <publishTime>07/05/2019 16:14:23</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/02/2019 15:27:10</publishTime>
+      <publishTime>08/11/2019 11:01:31</publishTime>
     </File>
   </ItemGroup>
 </Project>
