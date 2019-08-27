@@ -88,13 +88,16 @@ namespace XXCWEBAPI.Models
             get { return _CreateTime; }
         }
         private string _Phone;
-        /// <summary>
-        /// 
-        /// </summary>
         public string Phone
         {
             set { _Phone = value; }
             get { return _Phone; }
+        }
+        private string _Role;
+        public string Role
+        {
+            set { _Role = value; }
+            get { return _Role; }
         }
     }
 }
