@@ -122,6 +122,6 @@ D:\CSharp\C#\XXCWEBAPI\XXCWEBAPI\bin\zh-Hans\System.Web.Razor.resources.dll
 D:\CSharp\C#\XXCWEBAPI\XXCWEBAPI\bin\zh-Hans\System.Web.WebPages.resources.dll
 D:\CSharp\C#\XXCWEBAPI\XXCWEBAPI\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
 D:\CSharp\C#\XXCWEBAPI\XXCWEBAPI\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
-D:\CSharp\C#\XXCWEBAPI\XXCWEBAPI\obj\Debug\XXCWEBAPI.csprojResolveAssemblyReference.cache
 D:\CSharp\C#\XXCWEBAPI\XXCWEBAPI\obj\Debug\XXCWEBAPI.dll
 D:\CSharp\C#\XXCWEBAPI\XXCWEBAPI\obj\Debug\XXCWEBAPI.pdb
+D:\CSharp\C#\XXCWEBAPI\XXCWEBAPI\obj\Debug\XXCWEBAPI.csprojResolveAssemblyReference.cache

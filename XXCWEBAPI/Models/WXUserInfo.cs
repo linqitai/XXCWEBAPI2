@@ -93,6 +93,18 @@ namespace XXCWEBAPI.Models
             set { _Phone = value; }
             get { return _Phone; }
         }
+        private string _PUPPhone;
+        public string PUPPhone
+        {
+            set { _PUPPhone = value; }
+            get { return _PUPPhone; }
+        }
+        private string _SMPhone;
+        public string SMPhone
+        {
+            set { _SMPhone = value; }
+            get { return _SMPhone; }
+        }
         private string _Role;
         public string Role
         {
