@@ -91,5 +91,12 @@ namespace XXCWEBAPI.Models
             set { _SActualNo = value; }
             get { return _SActualNo; }
         }
+
+        private string _SurrogateMPhone;
+        public string SurrogateMPhone
+        {
+            set { _SurrogateMPhone = value; }
+            get { return _SurrogateMPhone; }
+        }
 	}
 }
