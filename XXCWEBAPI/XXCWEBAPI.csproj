@@ -140,6 +140,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\CourtInfController.cs" />
+    <Compile Include="Models\WeChat.cs" />
     <Compile Include="Controllers\XXYXTController.cs" />
     <Compile Include="Controllers\SHFYControl2.cs" />
     <Compile Include="Controllers\UserInfController.cs" />

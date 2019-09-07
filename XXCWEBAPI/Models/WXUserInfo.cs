@@ -87,6 +87,15 @@ namespace XXCWEBAPI.Models
             set { _CreateTime = value; }
             get { return _CreateTime; }
         }
+        private string _NowTime;
+        /// <summary>
+        /// 
+        /// </summary>
+        public string NowTime
+        {
+            set { _NowTime = value; }
+            get { return _NowTime; }
+        }
         private string _Phone;
         public string Phone
         {
@@ -110,6 +119,72 @@ namespace XXCWEBAPI.Models
         {
             set { _Role = value; }
             get { return _Role; }
+        }
+        private string _appid;
+        public string appid
+        {
+            set { _appid = value; }
+            get { return _appid; }
+        }
+        private string _secret;
+        public string secret
+        {
+            set { _secret = value; }
+            get { return _secret; }
+        }
+        private string _js_code;
+        public string js_code
+        {
+            set { _js_code = value; }
+            get { return _js_code; }
+        }
+        private string _access_token;
+        public string access_token
+        {
+            set { _access_token = value; }
+            get { return _access_token; }
+        }
+        private string _openid;
+        public string openid
+        {
+            set { _openid = value; }
+            get { return _openid; }
+        }
+        private string _form_id;
+        public string form_id
+        {
+            set { _form_id = value; }
+            get { return _form_id; }
+        }
+        private string _template_id;
+        public string template_id
+        {
+            set { _template_id = value; }
+            get { return _template_id; }
+        }
+        private string _name;
+        public string name
+        {
+            set { _name = value; }
+            get { return _name; }
+        }
+        private string _sname;
+        public string sname
+        {
+            set { _sname = value; }
+            get { return _sname; }
+        }
+        private string _SDDetailName;
+        public string SDDetailName
+        {
+            set { _SDDetailName = value; }
+            get { return _SDDetailName; }
+        }
+        private string _ordercode;
+        public string ordercode
+        {
+            set { _ordercode = value; }
+            get { return _ordercode; }
         }
     }
 }

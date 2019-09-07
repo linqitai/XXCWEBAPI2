@@ -65,6 +65,124 @@ namespace XXCWEBAPI.Controllers
         {
             public string openid { get; set; }
         }
+        [HttpPost, Route("sendMessage")]
+        public string SendMessage(WXUserInfo d)
+        {
+            #region 微信服务消息发送
+            string access_token = d.access_token;//需要从数据库中获取
+            string touser = d.openid;//需要从数据库中获取
+            string template_id = d.template_id;
+            string form_id = d.form_id;//需要从数据库中获取
+            //textBox1.Text = "_form_id:" + form_id;
+            //string page = "pages/user/index?SActualNo=" + strSActualNo;
+            string page = "pages/firstPage/firstPage";
+            //var data = new TemplateModel("智慧幼儿园", "SName", DateTime.Now.ToString("yyy-MM-dd"));
+
+            var keyword1 = new
+            {
+                value = d.name,
+                color = "#173177"
+            };
+            var keyword2 = new
+            {
+                value = d.SMPhone,
+                color = "#173177"
+            };
+            var keyword3 = new
+            {
+                value = d.SDDetailName,
+                color = "#173177"
+            };
+            var keyword4 = new
+            {
+                value = d.ordercode,
+                color = "#173177"
+            };
+            var data = new
+            {
+                keyword1 = keyword1,
+                keyword2 = keyword2,
+                keyword3 = keyword3,
+                keyword4 = keyword4
+            };
+            WeChat wechat = new WeChat();
+            string result = wechat.SendTemplete(access_token, template_id, touser, form_id, page, data);
+            return result;
+            //if (result!="")
+            //{
+            //    return ConvertHelper.resultJson(1, "消息推送成功");
+            //}
+            //else
+            //{
+            //    return ConvertHelper.resultJson(0, "消息推送失败");
+            //}
+            #endregion
+        }
+        [HttpPost, Route("sendMessage2")]
+        public string SendMessage2(WXUserInfo d)
+        {
+            #region 微信服务消息发送
+            string access_token = d.access_token;//需要从数据库中获取
+            string touser = d.openid;//需要从数据库中获取
+            string template_id = d.template_id;
+            string form_id = d.form_id;//需要从数据库中获取
+            //textBox1.Text = "_form_id:" + form_id;
+            //string page = "pages/user/index?SActualNo=" + strSActualNo;
+            string page = "pages/firstPage/firstPage";
+            //var data = new TemplateModel("智慧幼儿园", "SName", DateTime.Now.ToString("yyy-MM-dd"));
+
+            var keyword1 = new
+            {
+                value = d.name,
+                color = "#173177"
+            };
+            var keyword2 = new
+            {
+                value = d.CreateTime,
+                color = "#173177"
+            };
+            var keyword3 = new
+            {
+                value = d.NowTime,
+                color = "#173177"
+            };
+            var keyword4 = new
+            {
+                value = d.sname,
+                color = "#173177"
+            };
+            var keyword5 = new
+            {
+                value = "审核通过",
+                color = "#173177"
+            };
+            var keyword6 = new
+            {
+                value = "无",
+                color = "#173177"
+            };
+            var data = new
+            {
+                keyword1 = keyword1,
+                keyword2 = keyword2,
+                keyword3 = keyword3,
+                keyword4 = keyword4,
+                keyword5 = keyword5,
+                keyword6 = keyword6
+            };
+            WeChat wechat = new WeChat();
+            string result = wechat.SendTemplete(access_token, template_id, touser, form_id, page, data);
+            return result;
+            //if (result!="")
+            //{
+            //    return ConvertHelper.resultJson(1, "消息推送成功");
+            //}
+            //else
+            //{
+            //    return ConvertHelper.resultJson(0, "消息推送失败");
+            //}
+            #endregion
+        }
         [HttpPost, Route("addWXUserInfo")]
         public string AddWXUserInfo(WXUserInfo v)
         {
