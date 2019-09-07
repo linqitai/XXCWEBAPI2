@@ -48,6 +48,35 @@ namespace XXCWEBAPI.Controllers
             });
             return dt;
         }
+        [HttpPost, Route("isRecieveInfo")]
+        public string IsRecieveInfo(XXYXT v)
+        {
+            string sql = "";
+            SqlParameter[] pms = null;
+            int result;
+            pms = new SqlParameter[]{
+                new SqlParameter("@SActualNo",SqlDbType.NVarChar){Value = (v.SActualNo)},
+                new SqlParameter("@IsRecived",SqlDbType.NVarChar){Value = (v.IsRecived)}
+            };
+            //核实密码
+            sql = "update XXCLOUD.dbo.T_SurrogateInf set IsRecived=@IsRecived where SActualNo=@SActualNo";
+            result = SQLHelper4XXYXT.ExecuteNonQuery(sql, System.Data.CommandType.Text, pms);
+            if (result == 1 && v.IsRecived == "1")
+            {
+                return ConvertHelper.resultJson(1, "开启接收");
+                //return "{\"code\":1,\"msg\":" + "开启接收" + "}";
+            }
+            else if (result == 1 && v.IsRecived == "0")
+            {
+                return ConvertHelper.resultJson(1, "取消接收");
+                //return "{\"code\":1,\"msg\":" + "取消接受" + "}";
+            }
+            else
+            {
+                return ConvertHelper.resultJson(0, "操作失败");
+                //return "{\"code\":0,\"msg\":" + "操作失败" + "}";
+            }
+        }
         [HttpPost, Route("deletePastTimeForm_id")]
         public string DeletePastTimeForm_id(XXYXT v)
         {

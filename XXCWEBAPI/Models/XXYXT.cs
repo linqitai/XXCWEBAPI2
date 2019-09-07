@@ -98,6 +98,12 @@ namespace XXCWEBAPI.Models
             set { _SurrogateMPhone = value; }
             get { return _SurrogateMPhone; }
         }
+        private string _IsRecived;
+        public string IsRecived
+        {
+            set { _IsRecived = value; }
+            get { return _IsRecived; }
+        }
         private string _appid;
         public string appid
         {
