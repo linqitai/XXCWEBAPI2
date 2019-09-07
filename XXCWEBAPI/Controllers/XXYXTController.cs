@@ -12,6 +12,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Web;
 using System.Web.Http;
+using System.Web.Script.Serialization;
 using XXCWEBAPI.Models;
 using XXCWEBAPI.Utils;
 
@@ -746,6 +747,43 @@ namespace XXCWEBAPI.Controllers
                 return ConvertHelper.resultJson(0, result);
             }
             return ConvertHelper.resultJson(0, "系统出错了");
+        }
+
+        [HttpPost, Route("getAccess_token")]
+        public string GetAccess_token(XXYXT d)
+        {
+            string url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=" + d.appid + "&secret=" + d.secret;
+
+            HttpHelper2 http = new HttpHelper2();
+
+            string json = http.GetResponseString(HttpHelper.CreateGetHttpResponse(url));
+
+            JavaScriptSerializer js = new JavaScriptSerializer();   //实例化一个能够序列化数据的类
+            AccessClass list = js.Deserialize<AccessClass>(json);    //将json数据转化为对象类型并赋值给list
+            //textBox1.Text = list.access_token;
+           return list.access_token;
+        }
+        [HttpPost, Route("getOpenId")]
+        public string GetOpenId(XXYXT d)
+        {
+            string url = "https://api.weixin.qq.com/sns/jscode2session?appid=" + d.appid + "&secret=" + d.secret + "&js_code=" + d.js_code + "&grant_type=authorization_code";
+
+            HttpHelper2 http = new HttpHelper2();
+
+            string json = http.GetResponseString(HttpHelper.CreateGetHttpResponse(url));
+
+            JavaScriptSerializer js = new JavaScriptSerializer();   //实例化一个能够序列化数据的类
+            OpenIdClass list = js.Deserialize<OpenIdClass>(json);    //将json数据转化为对象类型并赋值给list
+            //textBox1.Text = list.access_token;
+            return list.openid;
+        }
+        public struct AccessClass
+        {
+            public string access_token { get; set; }
+        }
+        public struct OpenIdClass
+        {
+            public string openid { get; set; }
         }
         [HttpGet, Route("getStaffInfoByName")]
         public string GetStaffInfoByName(string SName)

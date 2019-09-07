@@ -98,5 +98,23 @@ namespace XXCWEBAPI.Models
             set { _SurrogateMPhone = value; }
             get { return _SurrogateMPhone; }
         }
+        private string _appid;
+        public string appid
+        {
+            set { _appid = value; }
+            get { return _appid; }
+        }
+        private string _secret;
+        public string secret
+        {
+            set { _secret = value; }
+            get { return _secret; }
+        }
+        private string _js_code;
+        public string js_code
+        {
+            set { _js_code = value; }
+            get { return _js_code; }
+        }
 	}
 }
