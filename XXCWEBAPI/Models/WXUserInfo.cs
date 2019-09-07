@@ -186,5 +186,17 @@ namespace XXCWEBAPI.Models
             set { _ordercode = value; }
             get { return _ordercode; }
         }
+        private string _checkStatus;
+        public string checkStatus
+        {
+            set { _checkStatus = value; }
+            get { return _checkStatus; }
+        }
+        private string _RefuseReason;
+        public string RefuseReason
+        {
+            set { _RefuseReason = value; }
+            get { return _RefuseReason; }
+        }
     }
 }

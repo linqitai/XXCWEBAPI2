@@ -153,12 +153,12 @@ namespace XXCWEBAPI.Controllers
             };
             var keyword5 = new
             {
-                value = "审核通过",
+                value = d.checkStatus,
                 color = "#173177"
             };
             var keyword6 = new
             {
-                value = "无",
+                value = d.RefuseReason,
                 color = "#173177"
             };
             var data = new
